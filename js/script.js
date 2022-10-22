@@ -22,8 +22,10 @@ function tampil(){
     data.forEach(listData)
 }
 function listData(item,index){
-    listMhs.innerHTML += item.npm + ' - ' + item.nama
+    listMhs.innerHTML += '<li>' + item.npm + ' - ' + item.nama + '</li>'
 }
+
+
 
 
 
