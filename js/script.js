@@ -2,9 +2,8 @@
 let txtNpm = document.getElementById('npm')
 let txtNama = document.getElementById('name')
 let listMhs = document.getElementById('listMahasiswa')
-let data = [
-  
-]
+let data = [] 
+
 
 const buttonForm = document.getElementById('submit')
 buttonForm.addEventListener('click',function(){
@@ -12,6 +11,19 @@ buttonForm.addEventListener('click',function(){
     console.log(txtNama.value)
     console.log(txtNpm.value)
     data.push({'npm' : txtNpm.value,"nama": txtNama.value})
+
+    // cek apakah ada data di dalam localStorage
+    if(localStorage.getItem("listMahasiswa") === null){
+        // Jika localStorage kosong/null
+        // simpan localStorage dengan key listMahasiswa
+        localStorage.setItem("listMahasiswa",JSON.stringify(data))
+        console.log("Data belum ada / belum diisi")
+    }
+    else{
+        // Jika data sudah ada
+        localStorage.getItem("listMahasiswa")
+    }
+
     tampil()
 })
 
